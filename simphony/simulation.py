@@ -296,9 +296,9 @@ class SweepSimulation(Simulation):
             # Ensure that models are valid with current simulation parameters.
             if lower > freq[0] or upper < freq[-1]:
                 raise ValueError(
-                    'Simulation frequencies ({} - {}) out of valid bounds for "{}"'.format(
-                        freq[0], freq[-1], type(model).__name__
-                    )
+                    f"Simulation wavelength (nm) {int(freq2wl(freq[1])*1e9)} -"
+                    f" {int(freq2wl(freq[0])*1e9)} out of valid bounds for {model}"
+                    f" {int(freq2wl(upper)*1e9)} - {int(freq2wl(lower)*1e9)} "
                 )
 
     @staticmethod

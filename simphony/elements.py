@@ -41,6 +41,7 @@ class Model:
 
     pins = None
     freq_range = (None, None)
+    name = 'Model'
 
     def s_parameters(self, freq):
         """
@@ -114,6 +115,9 @@ class Model:
         """
         pass
 
+    def __str__(self):
+        return self.name
+
 # class PModel(Model):
 #     """
 #     Parameterized Elements have scattering parameters that are calculated on
@@ -135,3 +139,8 @@ class Model:
 #     are preserved.
 #     """
 #     pass
+
+
+if __name__ == "__main__":
+    c = Model()
+    print(c)
